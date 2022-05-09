@@ -16,15 +16,16 @@
 </header>
 
 
-<main class="flex-row justify-space-between">
-    <div class="col-12 col-md-4">
-        <div class="card">
-            <h3 class="card-header text-uppercase">Search By City:</h3>
-            <form id="user-form" class="card-body">
-            
-            <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-            <button type="submit" class="btn btn-info">Search</button>
+<main class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-3 p-2 search-column bg-secondary">
+            <div>           
+            <form id="city-form" class="card-body">
+                <h3 class="card-header">Search for a City:</h3>           
+                <input id="city" type = "text" autofocus = "true" class = "form-input"/>
+            <button type="submit" class="btn btn-info mt-2">Search</button>
             </form>
+            </div>
         </div>
 
         <div class="col-12 col-md-9">
@@ -38,6 +39,7 @@
                     <h2 class= "col-12" id = "forecast"></h2>
                     <div class = "d-flex" id = "fiveday-container"></div>
             </div>  
+        </div>
     </div>
 
 
