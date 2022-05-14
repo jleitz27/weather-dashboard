@@ -3,8 +3,8 @@ var apiKey = "cc7058684a739f06477775dd4ccca86e";
 
 //variables
 var cities = [];
-var citySearch = $("#city-search").val();
-var  cityFormEl = document.querySelector("#city-form");
+var citySearch = document.querySelector("#city-search");
+var cityFormEl = document.querySelector("#city-form");
 var cityInputEl = document.querySelector("#city");
 var weatherEl = document.querySelector("#current-weather");
 
@@ -27,20 +27,20 @@ var getCityWeather = function(city){
 
 var displayWeather = function(weather, searchCity){
     //clear old content
-    weatherContainerEl.textContent= "";  
-    citySearchInputEl.textContent=searchCity;
+    weatherEl.textContent= "";  
+    citySearch.textContent=searchCity;
  
     //console.log(weather);
  
     //create date element
     var currentDate = document.createElement("span")
     currentDate.textContent=" (" + moment(weather.dt.value).format("MMM D, YYYY") + ") ";
-    citySearchInputEl.appendChild(currentDate);
+    citySearch.appendChild(currentDate);
  
     //create an image element
     var weatherIcon = document.createElement("img")
     weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
-    citySearchInputEl.appendChild(weatherIcon);
+    citySearch.appendChild(weatherIcon);
  
     //create a span element to hold temperature data
     var temperatureEl = document.createElement("span");
@@ -51,39 +51,39 @@ var displayWeather = function(weather, searchCity){
     var humidityEl = document.createElement("span");
     humidityEl.textContent = "Humidity: " + weather.main.humidity + " %";
     humidityEl.classList = "list-group-item"
- 
+
     //create a span element to hold Wind data
     var windSpeedEl = document.createElement("span");
     windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
     windSpeedEl.classList = "list-group-item"
- 
+
     //append to container
-    weatherContainerEl.appendChild(temperatureEl);
- 
+    weatherEl.appendChild(temperatureEl);
+
     //append to container
-    weatherContainerEl.appendChild(humidityEl);
- 
+    weatherEl.appendChild(humidityEl);
+
     //append to container
-    weatherContainerEl.appendChild(windSpeedEl);
- 
+    weatherEl.appendChild(windSpeedEl);
+
     var lat = weather.coord.lat;
     var lon = weather.coord.lon;
     getUvIndex(lat,lon)
- }
+}
 
 var formSumbitHandler = function(event){
     event.preventDefault();
     var city = cityInputEl.value.trim();
     if(city){
         getCityWeather(city);
-        get5Day(city);
+        //get5Day(city);
         cities.unshift({city});
         cityInputEl.value = "";
     } else{
         alert("Please enter a City");
     }
     saveSearch();
-    pastSearch(city);
+    //pastSearch(city);
 }
 
     // function for current conditions
@@ -118,4 +118,4 @@ var saveSearch = function(){
 };
 
 cityFormEl.addEventListener("submit", formSumbitHandler);
-pastSearchButtonEl.addEventListener("click", pastSearchHandler);
+//pastSearchButtonEl.addEventListener("click", pastSearchHandler);
