@@ -21,7 +21,7 @@ https://jleitz27.github.io/weather-dashboard/
 
 ##
 <p align="center">
-  <img src="./assets/images/site1.png" width="350"
+  <img src="./assets/images/site.png" width="350"
 
 </p>
 
