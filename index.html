@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-   
+
     <title>Weather Dashboard</title>
 </head>
 
@@ -22,7 +22,7 @@
             <div>           
             <form id="city-form" class="card-body">
                 <h3 class="card-header">Search for a City:</h3>           
-                <input id="city" type = "text" autofocus = "true" class = "form-input"/>
+                <input id="city" type = "text" autofocus = "true" class = "form-input col-12" placeholder="City"/>
             <button type="submit" class="btn btn-info mt-2">Search</button>
             </form>
             </div>
@@ -41,7 +41,7 @@
             </div>
             <div class = "row border" id = "five-day-forecast">
                     <h2 class= "col-12" id = "forecast"></h2>
-                    <div class = "d-flex" id = "fiveday"></div>
+                    <div class = "d-flex flex-wrap" id = "fiveday"></div>
             </div>  
         </div>
     </div>
@@ -49,7 +49,7 @@
 
 </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 <script src="./assets/js/script.js"></script>
 </body>
 
