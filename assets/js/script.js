@@ -195,7 +195,8 @@ var display5Day = function(weather){
 
         //append to forecast card
         $(forecastEl).append(forecastTempEl);
-
+        
+        //humidity section
         var forecastHumEl=document.createElement("span");
         $(forecastHumEl).addClass("card-body text-center");
         forecastHumEl.textContent = dailyForecast.main.humidity + "  %";
@@ -203,7 +204,14 @@ var display5Day = function(weather){
        //append to forecast card
         $(forecastEl).append(forecastHumEl);
 
-            //console.log(forecastEl);
+        var forecastWindEl=document.createElement("span");
+        $(forecastWindEl).addClass("card-body text-center");
+        forecastWindEl.textContent = dailyForecast.wind.speed + " MPH";
+console.log(forecastWindEl.textContent)
+       //append to forecast card
+        $(forecastEl).append(forecastWindEl);
+
+            
        //append to five day container
         $(forecastContainerEl).append(forecastEl);
     }
